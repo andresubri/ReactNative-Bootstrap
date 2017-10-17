@@ -1,16 +1,24 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet } from 'react-native';
-import { Form, Item, Label, Input, Button, Icon, Title, Text, Content, Container,  } from 'native-base';
+import { Form, Item, Label, Input, Button, Icon, Title, Text, Content, Container } from 'native-base';
 import * as strings from '../../Data/Strings';
+import RestorePassword from '../CardDialog';
 
 export default class Login extends Component {
   static navigationOptions = {
     header: null
   }
+
+  showRestorePassword = function () {
+    
+  }
+
   render() {
     const { navigate } = this.props.navigation;    
     return (
-      <Container style={styles.content}>
+      <RestorePassword/>
+      
+      /*       <Container style={styles.content}>
       <Content >
         <Form>
           <Item floatingLabel>
@@ -29,11 +37,13 @@ export default class Login extends Component {
         onPress={() => navigate('SignUp')}>
         <Text>{strings.SignUp}</Text>
         </Button>
-        <Button transparent full>
-          <Text>{strings.ForgotPassword}</Text>
+        <Button transparent full
+        onPress={() => showRestorePassword() }>
+
+          <Text>{strings.RestorePassword}</Text>
         </Button>
       </Content>      
-    </Container>
+    </Container> */
     );
   }
 }
